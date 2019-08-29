@@ -5,7 +5,18 @@
   let currentZoom = 0;
   let propellerAeroMap;
 
-  showItemOnMap = item => {
+  const resetView = () => {
+    document.querySelectorAll('#actions .action').forEach(actionBtn => {
+      actionBtn.disabled = false;
+    });
+    mapLayers.forEach(layer => {
+      layer.removeFrom(propellerAeroMap);
+    });
+    currentZoom = 1;
+    propellerAeroMap.setView(new L.LatLng(0, 0), currentZoom);
+  };
+
+  const showItemOnMap = item => {
     let itemLayer = null;
     switch (item) {
       case 'drone':
@@ -40,18 +51,7 @@
     }
   };
 
-  resetView = () => {
-    document.querySelectorAll('#actions .action').forEach(actionBtn => {
-      actionBtn.disabled = false;
-    });
-    mapLayers.forEach(layer => {
-      layer.removeFrom(propellerAeroMap);
-    });
-    currentZoom = 1;
-    propellerAeroMap.setView(new L.LatLng(0, 0), currentZoom);
-  };
-
-  watchForActionClick = () => {
+  const watchForActionClick = () => {
     document.querySelectorAll('#actions .action').forEach(actionBtn => {
       actionBtn.addEventListener('click', () => {
         if (!actionBtn.disabled) {
@@ -64,7 +64,7 @@
     });
   };
 
-  initMap = () => {
+  const initMap = () => {
     propellerAeroMap = L.map(mapWrapperId, { maxZoom: maxZoom }).setView(
       [0, 0],
       currentZoom

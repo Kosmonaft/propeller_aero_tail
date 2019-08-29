@@ -1,0 +1,15 @@
+{
+  "name": "propeller_aero_challenge",
+  "version": "1.0.0",
+  "description": "We've tiled a high res image into a set of tiles in the 'tiled' folder (un-tiled.jpg is just for reference).  Create a simple frontend app in your framework of choice that displays them in the style of a 2D map view.  The app should be self contained and simple for us to build and run (e.g. provide npm install/build/start).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pawel Christow",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2"
+  }
+}

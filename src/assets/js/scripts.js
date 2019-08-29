@@ -34,11 +34,7 @@
           radius: 200000
         });
         break;
-
-      case 'reset':
-        resetView();
-        break;
-
+        
       default:
         break;
     }
@@ -57,8 +53,10 @@
         if (!actionBtn.disabled) {
           if (actionBtn.dataset.forItem !== 'reset') {
             actionBtn.disabled = true;
+            showItemOnMap(actionBtn.dataset.forItem);
+          }else{
+            resetView();
           }
-          showItemOnMap(actionBtn.dataset.forItem);
         }
       });
     });

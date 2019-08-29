@@ -14,6 +14,11 @@ function styles() {
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('dist/assets/css'));
 }
+function tiles() {
+  return gulp
+    .src(['src/assets/tiled/**/*'])
+    .pipe(gulp.dest('dist/assets/tiled/'));
+}
 
 function template() {
   return gulp.src(['src/index.html']).pipe(gulp.dest('dist/'));
@@ -32,6 +37,7 @@ function serve(done) {
 }
 
 function build(done) {
+  tiles();
   template();
   scripts();
   styles();

@@ -1,0 +1,27 @@
+#actions {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px;
+}
+
+button {
+    background: transparent;
+    margin-bottom: 20px;
+    &.action {
+        border: solid 1px $black-color;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background: $black-color;
+            color: $primary-color;
+        }
+        &:disabled {
+            opacity: 0.75;
+            background: rgba($black-color, 0.75);
+            color: $primary-color;
+            cursor: not-allowed;
+        }
+    }
+}

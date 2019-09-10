@@ -1,4 +1,4 @@
-# Propello Aero Challenge
+# Tech Challenge
 
 ## Installation
 Install browser-sync globally
